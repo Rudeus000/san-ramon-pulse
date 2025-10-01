@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Heart, Users, Award } from "lucide-react";
+import historiaImage from "@/assets/historia.jpg";
 
 const Nosotros = () => {
   const timeline = [
@@ -105,6 +106,21 @@ const Nosotros = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Imagen Histórica */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <img
+              src={historiaImage}
+              alt="Historia del Colegio San Ramón"
+              className="w-full max-w-4xl mx-auto rounded-lg shadow-xl h-[400px] object-cover"
+            />
+          </motion.div>
 
           {/* Timeline */}
           <motion.div

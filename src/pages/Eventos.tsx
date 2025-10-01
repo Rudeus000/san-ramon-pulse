@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, MapPin } from "lucide-react";
+import aniversarioImage from "@/assets/aniversario.jpg";
+import arteImage from "@/assets/arte.jpg";
+import deportesImage from "@/assets/deportes.jpg";
 
 const Eventos = () => {
   const eventos = [
@@ -133,18 +136,89 @@ const Eventos = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="aspect-video bg-gradient-to-br from-primary to-primary/70 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
-              >
-                <Calendar className="h-16 w-16 text-primary-foreground/50" />
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src={aniversarioImage}
+                alt="Aniversario Institucional"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <h3 className="font-bold text-2xl mb-2">Aniversario 177 años</h3>
+                  <p className="text-white/90">Desfile cívico y ceremonia especial</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src={arteImage}
+                alt="Festival de Arte"
+                className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Festival de Arte</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src={deportesImage}
+                alt="Campeonato Deportivo"
+                className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Campeonato Deportivo</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="aspect-video bg-gradient-to-br from-primary to-primary/70 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
+            >
+              <Calendar className="h-16 w-16 text-primary-foreground/50" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="aspect-video bg-gradient-to-br from-primary to-primary/70 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
+            >
+              <Calendar className="h-16 w-16 text-primary-foreground/50" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="aspect-video bg-gradient-to-br from-primary to-primary/70 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
+            >
+              <Calendar className="h-16 w-16 text-primary-foreground/50" />
+            </motion.div>
           </div>
         </div>
       </section>

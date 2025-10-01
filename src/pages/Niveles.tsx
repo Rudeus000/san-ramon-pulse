@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import primariaImage from "@/assets/primaria.jpg";
 import secundariaImage from "@/assets/secundaria.jpg";
+import aulaPrimariaImage from "@/assets/aula-primaria.jpg";
+import aulaSecundariaImage from "@/assets/aula-secundaria.jpg";
+import bibliotecaImage from "@/assets/biblioteca.jpg";
+import laboratorioImage from "@/assets/laboratorio.jpg";
+import deportesImage from "@/assets/deportes.jpg";
+import arteImage from "@/assets/arte.jpg";
 
 const Niveles = () => {
   const primariaCursos = [
@@ -151,6 +157,130 @@ const Niveles = () => {
                     </div>
                   </CardContent>
                 </Card>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Galería de Actividades */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Vida <span className="text-primary">Estudiantil</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Nuestros estudiantes desarrollan sus habilidades en diversos espacios de aprendizaje
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={aulaPrimariaImage}
+                alt="Aula de Primaria"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Aulas de Primaria</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={aulaSecundariaImage}
+                alt="Aula de Secundaria"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Aulas de Secundaria</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={bibliotecaImage}
+                alt="Biblioteca"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Biblioteca</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={laboratorioImage}
+                alt="Laboratorio de Ciencias"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Laboratorio</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg lg:col-span-2"
+            >
+              <img
+                src={deportesImage}
+                alt="Actividades Deportivas"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Educación Física y Deportes</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg lg:col-span-2"
+            >
+              <img
+                src={arteImage}
+                alt="Talleres de Arte"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Arte y Cultura</p>
               </div>
             </motion.div>
           </div>

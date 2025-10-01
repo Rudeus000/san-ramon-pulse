@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, BookOpen, FlaskConical, Library, Palette, Trophy } from "lucide-react";
+import bibliotecaImage from "@/assets/biblioteca.jpg";
+import laboratorioImage from "@/assets/laboratorio.jpg";
+import deportesImage from "@/assets/deportes.jpg";
 
 const Servicios = () => {
   const servicios = [
@@ -94,7 +97,7 @@ const Servicios = () => {
         </div>
       </section>
 
-      {/* Instalaciones */}
+      {/* Instalaciones con Imágenes */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <motion.div
@@ -111,6 +114,69 @@ const Servicios = () => {
               Infraestructura moderna y espacios adecuados para el aprendizaje
             </p>
           </motion.div>
+
+          {/* Galería de Instalaciones */}
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={bibliotecaImage}
+                alt="Biblioteca Institucional"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <h3 className="font-bold text-xl mb-1">Biblioteca</h3>
+                  <p className="text-sm text-white/90">Amplio acervo bibliográfico y digital</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={laboratorioImage}
+                alt="Laboratorio de Ciencias"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <h3 className="font-bold text-xl mb-1">Laboratorios</h3>
+                  <p className="text-sm text-white/90">Equipados con tecnología moderna</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={deportesImage}
+                alt="Instalaciones Deportivas"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <h3 className="font-bold text-xl mb-1">Áreas Deportivas</h3>
+                  <p className="text-sm text-white/90">Campos multiusos y espacios recreativos</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <motion.div
