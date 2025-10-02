@@ -5,6 +5,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Calendar, FileText, ArrowRight, BookOpen, School, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import portadaImage from "@/../SAN RAMON/Portada.jpg";
+import imagenInicial from "@/../SAN RAMON/eduacionprimaria.jpg";
+import imagenPrimaria from "@/../SAN RAMON/primaria.jpg";
+import imagenSecundaria from "@/../SAN RAMON/educacionsecundaria2jpg.jpg";
 
 const Index = () => {
   return (
@@ -65,7 +68,7 @@ const Index = () => {
                 color: 'from-blue-500 to-blue-600',
                 icon: <BookOpen className="w-8 h-8 text-white" />,
                 responsable: 'Ana María Huamán Palomino',
-                imagen: '/eduacionprimaria.jpg',
+                imagen: imagenInicial,
                 tipo: 'Coordinadora'
               },
               {
@@ -74,7 +77,7 @@ const Index = () => {
                 color: 'from-green-500 to-green-600',
                 icon: <School className="w-8 h-8 text-white" />,
                 responsable: 'Prof. Sixto Alejandro ENCISO PALOMINO',
-                imagen: '/primaria.jpg',
+                imagen: imagenPrimaria,
                 tipo: 'Director'
               },
               {
@@ -83,7 +86,7 @@ const Index = () => {
                 color: 'from-red-500 to-red-600',
                 icon: <GraduationCap className="w-8 h-8 text-white" />,
                 responsable: 'Prof. Nelly MUNDACA HUARANCCA',
-                imagen: '/educacionsecundaria2jpg.jpg',
+                imagen: imagenSecundaria,
                 tipo: 'Directora'
               }
             ].map((nivel, index) => (
