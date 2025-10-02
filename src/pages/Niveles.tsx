@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import primariaImage from "@/assets/primaria.jpg";
-import secundariaImage from "@/assets/secundaria.jpg";
-import aulaPrimariaImage from "@/assets/aula-primaria.jpg";
-import aulaSecundariaImage from "@/assets/aula-secundaria.jpg";
-import bibliotecaImage from "@/assets/biblioteca.jpg";
-import laboratorioImage from "@/assets/laboratorio.jpg";
-import deportesImage from "@/assets/deportes.jpg";
-import arteImage from "@/assets/arte.jpg";
+// Imágenes desde la carpeta SAN RAMON
+import primariaImage from "@/../SAN RAMON/primaria.jpg";
+import secundariaImage from "@/../SAN RAMON/secuandaria.jpg";
+import aulaPrimariaImage from "@/../SAN RAMON/foto_3.jpg";
+import aulaSecundariaImage from "@/../SAN RAMON/foto_4.jpg";
+import bibliotecaImage from "@/../SAN RAMON/foto_5.jpg";
+import laboratorioImage from "@/../SAN RAMON/laboratorio2.jpg";
+import deportesImage from "@/../SAN RAMON/foto_7.jpg";
+import arteImage from "@/../SAN RAMON/foto_8.jpg";
 
 const Niveles = () => {
   const primariaCursos = [

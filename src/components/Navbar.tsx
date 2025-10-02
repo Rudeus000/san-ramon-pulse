@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoImage from "@/../SAN RAMON/logo2.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -43,8 +44,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-secondary p-2 rounded-lg transition-transform duration-300 group-hover:scale-110">
-              <GraduationCap className="h-8 w-8 text-primary" />
+            <div className="transition-transform duration-300 group-hover:scale-105">
+              <img 
+                src={logoImage} 
+                alt="Logo Colegio San Ramón" 
+                className="h-14 w-auto object-contain"
+              />
             </div>
             <div className="hidden md:block">
               <h1 className="text-primary-foreground font-bold text-lg leading-tight">

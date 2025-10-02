@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Heart, Users, Award } from "lucide-react";
-import historiaImage from "@/assets/historia.jpg";
+// Imágenes desde la carpeta SAN RAMON
+import historiaImage from "@/../SAN RAMON/desfilez.jpg";
+import portadaNosotros from "@/../SAN RAMON/Concursos3jpg.jpg";
 
 const Nosotros = () => {
   const timeline = [
@@ -41,25 +43,39 @@ const Nosotros = () => {
   return (
     <div>
       {/* Header */}
-      <section className="py-20 bg-gradient-to-b from-primary to-primary/90 text-primary-foreground">
+      <section 
+        className="relative py-32 text-primary-foreground overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${portadaNosotros})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 75%',
+          backgroundRepeat: 'no-repeat',
+          backgroundColor: '#1e1e1e',
+          backgroundAttachment: 'fixed',
+          minHeight: '70vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Sobre <span className="text-secondary">Nosotros</span>
-            </h1>
-            <p className="text-xl text-primary-foreground/90">
-              Más de un siglo y medio de historia dedicada a la formación de generaciones en Ayacucho
-            </p>
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                Sobre <span className="text-secondary">Nosotros</span>
+              </h1>
+              <p className="text-xl text-primary-foreground/90">
+                177 años de excelencia educativa en Ayacucho
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Presentación */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
@@ -117,7 +133,7 @@ const Nosotros = () => {
           >
             <img
               src={historiaImage}
-              alt="Historia del Colegio San Ramón"
+              alt="Desfile del Colegio San Ramón"
               className="w-full max-w-4xl mx-auto rounded-lg shadow-xl h-[400px] object-cover"
             />
           </motion.div>
