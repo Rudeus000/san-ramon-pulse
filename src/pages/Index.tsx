@@ -87,7 +87,7 @@ const Index = () => {
                   'Elvia Ataucusi Huamán'
                 ],
                 auxiliares: 2,
-                imagen: '/SAN RAMON/eduacionprimaria.jpg'
+                imagen: '/SAN%20RAMON/eduacionprimaria.jpg'
               },
               {
                 title: 'Nivel Primaria',
@@ -95,7 +95,7 @@ const Index = () => {
                 color: 'from-green-500 to-green-600',
                 icon: <School className="w-8 h-8 text-white" />,
                 director: 'Prof. Sixto Alejandro ENCISO PALOMINO',
-                imagen: '/SAN RAMON/primaria.jpg'
+                imagen: '/SAN%20RAMON/primaria.jpg'
               },
               {
                 title: 'Nivel Secundaria',
@@ -108,7 +108,7 @@ const Index = () => {
                   'Prof. Sixto Alejandro ENCISO PALOMINO (Primaria)',
                   'Prof. Alfredo PEREZ CARBAJAL (Administración)'
                 ],
-                imagen: '/SAN RAMON/educacionsecundaria.jpg'
+                imagen: '/SAN%20RAMON/educacionsecundaria2jpg.jpg'
               }
             ].map((nivel, index) => (
               <div 
