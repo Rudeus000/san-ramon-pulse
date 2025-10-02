@@ -65,7 +65,7 @@ const Index = () => {
                 color: 'from-blue-500 to-blue-600',
                 icon: <BookOpen className="w-8 h-8 text-white" />,
                 responsable: 'Ana María Huamán Palomino',
-                imagen: '/SAN%20RAMON/eduacionprimaria.jpg',
+                imagen: '/eduacionprimaria.jpg',
                 tipo: 'Coordinadora'
               },
               {
@@ -74,7 +74,7 @@ const Index = () => {
                 color: 'from-green-500 to-green-600',
                 icon: <School className="w-8 h-8 text-white" />,
                 responsable: 'Prof. Sixto Alejandro ENCISO PALOMINO',
-                imagen: '/SAN%20RAMON/primaria.jpg',
+                imagen: '/primaria.jpg',
                 tipo: 'Director'
               },
               {
@@ -83,7 +83,7 @@ const Index = () => {
                 color: 'from-red-500 to-red-600',
                 icon: <GraduationCap className="w-8 h-8 text-white" />,
                 responsable: 'Prof. Nelly MUNDACA HUARANCCA',
-                imagen: '/SAN%20RAMON/educacionsecundaria2jpg.jpg',
+                imagen: '/educacionsecundaria2jpg.jpg',
                 tipo: 'Directora'
               }
             ].map((nivel, index) => (
