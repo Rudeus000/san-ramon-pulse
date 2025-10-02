@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 // Imágenes desde la carpeta SAN RAMON
-const primariaImage = "/SAN RAMON/primaria.jpg";
-const secundariaImage = "/SAN RAMON/secuandaria.jpg";
-const aulaPrimariaImage = "/SAN RAMON/foto_3.jpg";
-const aulaSecundariaImage = "/SAN RAMON/foto_4.jpg";
-const bibliotecaImage = "/SAN RAMON/foto_5.jpg";
-const laboratorioImage = "/SAN RAMON/laboratorio2.jpg";
-const deportesImage = "/SAN RAMON/foto_7.jpg";
-const arteImage = "/SAN RAMON/foto_8.jpg";
+import primariaImage from "@/../SAN RAMON/primaria.jpg";
+import secundariaImage from "@/../SAN RAMON/secuandaria.jpg";
+import aulaPrimariaImage from "@/../SAN RAMON/foto_3.jpg";
+import aulaSecundariaImage from "@/../SAN RAMON/foto_4.jpg";
+import bibliotecaImage from "@/../SAN RAMON/foto_5.jpg";
+import laboratorioImage from "@/../SAN RAMON/laboratorio2.jpg";
+import deportesImage from "@/../SAN RAMON/foto_7.jpg";
+import arteImage from "@/../SAN RAMON/foto_8.jpg";
 
 const Niveles = () => {
   const primariaCursos = [
