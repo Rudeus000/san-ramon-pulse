@@ -15,11 +15,11 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${portadaImage})` }}
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="container mx-auto h-full flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
+        <div className="container mx-auto h-full flex items-center justify-end">
           <motion.div 
-            className="z-10 text-white max-w-md ml-8 md:ml-16"
-            initial={{ opacity: 0, x: -20 }}
+            className="z-10 text-white max-w-md mr-8 md:mr-16 text-right"
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -29,29 +29,11 @@ const Index = () => {
             <p className="text-base md:text-lg mb-6">
               Formando líderes con excelencia académica y valores cristianos desde 1847
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex justify-end">
               <Link to="/niveles">
-                <Button size="sm" className="text-sm">
+                <Button size="sm" className="text-sm bg-primary hover:bg-primary/90">
                   Nuestros Niveles
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link to="/admision">
-                <Button 
-                  size="sm"
-                  variant="outline" 
-                  className="text-sm bg-transparent border-white text-white hover:bg-white/10"
-                >
-                  Admisión 2025
-                </Button>
-              </Link>
-              <Link to="/contacto" className="w-full sm:w-auto">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="mt-2 bg-transparent border-white text-white hover:bg-white/10"
-                >
-                  Contáctanos
                 </Button>
               </Link>
             </div>
