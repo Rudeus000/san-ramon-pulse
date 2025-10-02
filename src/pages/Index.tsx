@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -77,104 +78,77 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                title: 'Nivel Inicial',
-                description: '5 secciones: 1 de 3 años, 2 de 4 años y 2 de 5 años',
+                title: 'Inicial',
+                description: 'Educación inicial para niños de 3 a 5 años',
                 color: 'from-blue-500 to-blue-600',
                 icon: <BookOpen className="w-8 h-8 text-white" />,
-                coordinadora: 'Ana María Huamán Palomino',
-                docentes: [
-                  'Liz Torrez Manza',
-                  'Elvia Ataucusi Huamán'
-                ],
-                auxiliares: 2,
-                imagen: '/SAN%20RAMON/eduacionprimaria.jpg'
+                responsable: 'Ana María Huamán Palomino',
+                imagen: '/SAN%20RAMON/eduacionprimaria.jpg',
+                tipo: 'Coordinadora'
               },
               {
-                title: 'Nivel Primaria',
-                description: '800 estudiantes en Educación Básica Regular',
+                title: 'Primaria',
+                description: 'Educación Básica Regular de 1° a 6° grado',
                 color: 'from-green-500 to-green-600',
                 icon: <School className="w-8 h-8 text-white" />,
-                director: 'Prof. Sixto Alejandro ENCISO PALOMINO',
-                imagen: '/SAN%20RAMON/primaria.jpg'
+                responsable: 'Prof. Sixto Alejandro ENCISO PALOMINO',
+                imagen: '/SAN%20RAMON/primaria.jpg',
+                tipo: 'Director'
               },
               {
-                title: 'Nivel Secundaria',
-                description: 'Más de 2,500 estudiantes en Educación Básica Regular y Alternativa',
+                title: 'Secundaria',
+                description: 'Educación Secundaria de 1° a 5° año',
                 color: 'from-red-500 to-red-600',
                 icon: <GraduationCap className="w-8 h-8 text-white" />,
-                director: 'Prof. Nelly MUNDACA HUARANCCA',
-                subdirectores: [
-                  'Lic. Rosa LIVIA GARAMENDI (Formación General)',
-                  'Prof. Sixto Alejandro ENCISO PALOMINO (Primaria)',
-                  'Prof. Alfredo PEREZ CARBAJAL (Administración)'
-                ],
-                imagen: '/SAN%20RAMON/educacionsecundaria2jpg.jpg'
+                responsable: 'Prof. Nelly MUNDACA HUARANCCA',
+                imagen: '/SAN%20RAMON/educacionsecundaria2jpg.jpg',
+                tipo: 'Directora'
               }
             ].map((nivel, index) => (
-              <div 
-                key={index}
-                className="bg-white/90 backdrop-blur-md rounded-2xl p-6 text-center border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
-              >
-                <div className="mb-6 overflow-hidden rounded-lg">
+                <div 
+                  key={index}
+                  className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full border border-gray-100 hover:border-primary/20"
+                >
+                <div className="relative overflow-hidden h-36">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-10" />
                   <img 
                     src={nivel.imagen} 
                     alt={nivel.title}
-                    className="w-full h-48 object-cover rounded-lg"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
-                <div className="flex-grow">
-                  <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-r ${nivel.color} flex items-center justify-center mb-4`}>
-                    {nivel.icon}
+                  <div className={`absolute -bottom-5 right-3 w-12 h-12 rounded-full ${nivel.color} flex items-center justify-center shadow-md border-2 border-white`}>
+                    {React.cloneElement(nivel.icon, { className: 'w-5 h-5 text-white' })}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{nivel.title}</h3>
-                  <p className="text-gray-600 mb-4">{nivel.description}</p>
-                  
-                  {nivel.coordinadora && (
-                    <div className="text-left text-sm text-gray-700 mb-3">
-                      <p className="font-semibold">Coordinadora:</p>
-                      <p>{nivel.coordinadora}</p>
-                      {nivel.docentes && nivel.docentes.length > 0 && (
-                        <div className="mt-2">
-                          <p className="font-semibold">Docentes:</p>
-                          <ul className="list-disc pl-5">
-                            {nivel.docentes.map((docente, i) => (
-                              <li key={i}>{docente}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      {nivel.auxiliares && (
-                        <p className="mt-1">{nivel.auxiliares} auxiliares</p>
-                      )}
-                    </div>
-                  )}
-                  
-                  {nivel.director && (
-                    <div className="text-left text-sm text-gray-700">
-                      <p className="font-semibold">Director:</p>
-                      <p>{nivel.director}</p>
-                      {nivel.subdirectores && nivel.subdirectores.length > 0 && (
-                        <div className="mt-2">
-                          <p className="font-semibold">Subdirectores:</p>
-                          <ul className="list-disc pl-5">
-                            {nivel.subdirectores.map((sub, i) => (
-                              <li key={i}>{sub}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  )}
                 </div>
-                
-                <div className="mt-6">
-                  <Link 
-                    to={`/niveles#${nivel.title.toLowerCase().replace(' ', '-')}`} 
-                    className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200"
-                  >
-                    Ver más detalles
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                <div className="flex-grow flex flex-col p-4 pt-6">
+                  <h3 className="text-xl font-bold text-gray-800 leading-tight text-center mb-3">Nivel {nivel.title}</h3>
+                  <p className="text-sm text-gray-600 text-center mb-4 leading-snug">{nivel.description}</p>
+                  
+                  <div className="space-y-3 mt-auto">
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <div className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 mt-0.5">
+                          <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="text-xs font-medium text-gray-500">{nivel.tipo}</p>
+                          <p className="text-sm text-gray-800">{nivel.responsable}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 pt-3 border-t border-gray-100 text-center">
+                    <Link 
+                      to={`/niveles#${nivel.title.toLowerCase().replace(' ', '-')}`}
+                      className="w-full flex items-center justify-between px-3 py-2 text-xs font-medium text-primary hover:text-white bg-white hover:bg-primary rounded-md border border-primary hover:border-transparent transition-all duration-200 group"
+                    >
+                      <span>Más información</span>
+                      <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
