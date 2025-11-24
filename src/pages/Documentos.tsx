@@ -32,7 +32,17 @@ const Documentos = () => {
   ];
 
   return (
-    <div>
+    <div className="relative min-h-screen">
+      {/* Fondo de la página */}
+      <div 
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(/colegio.jpg)`,
+          opacity: 0.12,
+          filter: 'blur(2px)'
+        }}
+      />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-background via-background/96 to-background" />
       {/* Header */}
       <section className="py-20 bg-gradient-to-b from-primary to-primary/90 text-primary-foreground">
         <div className="container mx-auto px-4">

@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-// Imágenes desde la carpeta assets
-import primariaImage from "@/assets/primaria.jpg";
-import secundariaImage from "@/assets/secundaria.jpg";
-import aulaPrimariaImage from "@/assets/aula-primaria.jpg";
-import aulaSecundariaImage from "@/assets/aula-secundaria.jpg";
-import bibliotecaImage from "@/assets/biblioteca.jpg";
-import laboratorioImage from "@/assets/laboratorio.jpg";
-import deportesImage from "@/assets/deportes.jpg";
-import arteImage from "@/assets/arte.jpg";
+// Imágenes desde la carpeta pública SAN RAMON (servidas desde la raíz)
+const primariaImage = "/primaria.jpg";
+const secundariaImage = "/educacionsecundaria2jpg.jpg";
+const aulaPrimariaImage = "/eduacionprimaria.jpg";
+const aulaSecundariaImage = "/secuandaria.jpg";
+const bibliotecaImage = "/colegio2.jpg"; // Imagen del colegio para biblioteca
+const laboratorioImage = "/Laboratorio.jpg";
+const deportesImage = "/Actividades.jpg"; // Usando imagen de actividades deportivas
+const arteImage = "/talleres.jpg";
 
 const Niveles = () => {
   const primariaCursos = [
@@ -35,7 +35,17 @@ const Niveles = () => {
   ];
 
   return (
-    <div>
+    <div className="relative min-h-screen">
+      {/* Fondo de la página */}
+      <div 
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${primariaImage})`,
+          opacity: 0.12,
+          filter: 'blur(2px)'
+        }}
+      />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-background via-background/96 to-background" />
       {/* Header */}
       <section className="py-20 bg-gradient-to-b from-primary to-primary/90 text-primary-foreground">
         <div className="container mx-auto px-4">

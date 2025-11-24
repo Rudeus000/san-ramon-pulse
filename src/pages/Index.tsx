@@ -4,14 +4,35 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, FileText, ArrowRight, BookOpen, School, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
-import portadaImage from "@/../SAN RAMON/Portada.jpg";
-import imagenInicial from "@/../SAN RAMON/eduacionprimaria.jpg";
-import imagenPrimaria from "@/../SAN RAMON/primaria.jpg";
-import imagenSecundaria from "@/../SAN RAMON/educacionsecundaria2jpg.jpg";
+// Imágenes desde la carpeta pública SAN RAMON (servidas desde la raíz)
+const portadaImage = "/Portada.jpg";
+const imagenInicial = "/eduacionprimaria.jpg";
+const imagenPrimaria = "/primaria.jpg";
+const imagenSecundaria = "/educacionsecundaria2jpg.jpg";
+
+// ============================================
+// LOGOS DE CONVENIOS - ACTUALIZAR AQUÍ
+// ============================================
+// Cuando tengas las imágenes de los logos en la carpeta SAN RAMON,
+// descomenta y actualiza estas líneas con los nombres reales de los archivos:
+// import logoPontificia from "@/../SAN RAMON/NOMBRE-ARCHIVO-PONTIFICIA.jpg";
+// import logoBBVA from "@/../SAN RAMON/NOMBRE-ARCHIVO-BBVA.jpg";
+// import logoUNSCH from "@/../SAN RAMON/NOMBRE-ARCHIVO-UNSCH.jpg";
+// import logoTelefonica from "@/../SAN RAMON/NOMBRE-ARCHIVO-TELEFONICA.jpg";
 
 const Index = () => {
   return (
-    <div>
+    <div className="relative min-h-screen">
+      {/* Fondo de la página */}
+      <div 
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${portadaImage})`,
+          opacity: 0.15,
+          filter: 'blur(2px)'
+        }}
+      />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-background via-background/95 to-background" />
       {/* Hero Section - Imagen de Portada */}
       <section className="relative h-[70vh] overflow-hidden">
         <div 
@@ -155,7 +176,7 @@ const Index = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -217,6 +238,77 @@ const Index = () => {
                 </CardContent>
               </Card>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nuestros Convenios */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Nuestros <span className="text-primary">Convenios</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Instituciones que colaboran con nuestra misión educativa
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {[
+              { 
+                nombre: "La Pontificia", 
+                // ACTUALIZAR: Reemplaza null con logoPontificia cuando importes la imagen
+                logo: null as string | null
+                // Ejemplo: logo: logoPontificia
+              },
+              { 
+                nombre: "BBVA", 
+                logo: null as string | null
+                // Ejemplo: logo: logoBBVA
+              },
+              { 
+                nombre: "UNSCH", 
+                logo: null as string | null
+                // Ejemplo: logo: logoUNSCH
+              },
+              { 
+                nombre: "Telefónica", 
+                logo: null as string | null
+                // Ejemplo: logo: logoTelefonica
+              },
+            ].map((convenio, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center"
+              >
+                <Card className="w-full h-32 flex items-center justify-center p-4 hover:shadow-lg transition-shadow duration-300 border-2 hover:border-primary/20 bg-white">
+                  {convenio.logo ? (
+                    <img
+                      src={convenio.logo}
+                      alt={convenio.nombre}
+                      className="max-w-full max-h-20 object-contain"
+                    />
+                  ) : (
+                    <div className="text-center text-muted-foreground text-sm">
+                      <div className="font-semibold mb-1">{convenio.nombre}</div>
+                      <div className="text-xs opacity-60">Logo pendiente</div>
+                      <div className="text-xs opacity-40 mt-1">Agregar imagen en SAN RAMON</div>
+                    </div>
+                  )}
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
