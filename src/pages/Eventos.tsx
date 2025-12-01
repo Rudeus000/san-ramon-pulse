@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const aniversarioImage = "/Actividades.jpg";
 const festivalDanza1 = "/festival_de_danza.jpg";
 const festivalDanza2 = "/festival_de_danza_primaria.jpg";
-const festivalPlatos = "/festival de platos tipicosjpg.jpg";
+const festivalPlatos = "/festival-de-platos-tipicos.jpg";
 const colegioImage = "/colegio.jpg";
 
 // Diagonal divider component

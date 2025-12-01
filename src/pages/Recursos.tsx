@@ -2,8 +2,19 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, BookOpen, Video, FileText, Globe } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Recursos = () => {
+  const notarUrl =
+    "https://drive.google.com/uc?export=download&id=10tbf7y5rMdVlyQocD7DmEYeeH35bl6Np";
+
   const plataformas = [
     {
       icon: Globe,
@@ -138,6 +149,102 @@ const Recursos = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* App NOTAR */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-sm mx-auto mb-20"
+          >
+            <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+              <CardHeader>
+                <div className="bg-primary/10 p-4 rounded-lg w-fit mb-4 mx-auto">
+                  <img
+                    src="/notar.png"
+                    alt="Logo de la app NOTAR"
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
+                <CardTitle className="text-lg text-center">Aplicación NOTAR</CardTitle>
+                <CardDescription className="text-sm text-center">
+                  Descarga la aplicación móvil del colegio.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full" variant="default">
+                      Ver código QR
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Código QR - App NOTAR</DialogTitle>
+                      <DialogDescription>
+                        Escanea este código con la cámara de tu celular para ir al enlace de descarga en Google Drive.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="flex justify-center py-4">
+                      <img
+                        src="/notarqr.png"
+                        alt="Código QR para descargar la app NOTAR"
+                        className="max-h-64 w-auto rounded-lg border shadow-md bg-white"
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <p className="text-sm text-muted-foreground">
+                        Al abrir el enlace, Google Drive puede avisar que{" "}
+                        <span className="font-semibold">no puede analizar el archivo</span> porque es un instalador
+                        (<span className="font-mono">app-release.apk</span>).
+                        Solo haz clic en <span className="font-semibold">"Descargar de todos modos"</span> para continuar.
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Nota: La app se descarga como archivo <span className="font-mono">app-release.apk</span>. 
+                        Después de descargarla, ábrela desde tu celular y, si el sistema lo solicita, habilita la 
+                        instalación de apps desde este origen para completar el proceso.
+                      </p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full" variant="outline">
+                      Descargar directo
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Descargar App NOTAR</DialogTitle>
+                      <DialogDescription>
+                        Serás redirigido a Google Drive para descargar la aplicación.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-3">
+                      <p className="text-sm text-muted-foreground">
+                        Google Drive puede mostrar un aviso indicando que{" "}
+                        <span className="font-semibold">no puede analizar el archivo</span> porque es un instalador
+                        (<span className="font-mono">app-release.apk - 53MB</span>).
+                        Esto es normal. Solo haz clic en <span className="font-semibold">"Descargar de todos modos"</span> para continuar.
+                      </p>
+                      <Button asChild className="w-full" variant="default">
+                        <a href={notarUrl} target="_blank" rel="noopener noreferrer">
+                          Ir a Google Drive
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                      <p className="text-xs text-muted-foreground">
+                        Después de descargar, abre el archivo desde tu celular y habilita la instalación desde este origen si el sistema lo solicita.
+                      </p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </CardContent>
+            </Card>
+          </motion.div>
 
           {/* Material de Apoyo */}
           <motion.div
